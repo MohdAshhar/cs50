@@ -1,3 +1,7 @@
+<?php if (isset($error)): ?>
+    <div class="alert alert-danger" role="alert"><?= htmlspecialchars($error) ?></div>
+<?php endif ?>
+
 <form action="register.php" method="post">
     <fieldset>
         <div class="form-group">
@@ -23,7 +27,3 @@
 </div>
 
 
-<script>
-    
-    alert("welcome to register.php");
-</script>

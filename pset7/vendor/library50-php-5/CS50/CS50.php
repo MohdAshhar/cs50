@@ -304,7 +304,7 @@
                     $handle = new PDO(
                         "mysql:dbname=" . self::$config["database"]["name"] . ";host=" . self::$config["database"]["host"],
                         self::$config["database"]["username"],
-                        self::$config["database"]["password"]
+                        "3vXt73bGW7mEcGnI"
                     );
                 }
                 catch (Exception $e)
@@ -349,7 +349,8 @@
             $statement = $handle->query($query);
             if ($statement === false)
             {
-                trigger_error($handle->errorInfo()[2], E_USER_ERROR);
+                return false;
+                //trigger_error($handle->errorInfo()[2], E_USER_ERROR);
             }
    
             // if query was SELECT

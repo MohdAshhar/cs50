@@ -155,5 +155,19 @@
             trigger_error("Invalid view: {$view}", E_USER_ERROR);
         }
     }
+    
+    function trim_zeroes($value)
+    {
+        $formatted = htmlspecialchars(number_format($value, 4));
+        if (substr($formatted, -1) == '0') {
+            if (substr($formatted, -2, 1) == '0') {
+                $formatted = substr($formatted, 0, -2);
+            } else {
+                $formatted = substr($formatted, 0, -1);
+            }
+        }
+        
+        return $formatted;
+    }
 
 ?>
