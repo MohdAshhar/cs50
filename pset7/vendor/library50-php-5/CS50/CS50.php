@@ -304,7 +304,7 @@
                     $handle = new PDO(
                         "mysql:dbname=" . self::$config["database"]["name"] . ";host=" . self::$config["database"]["host"],
                         self::$config["database"]["username"],
-                        "3vXt73bGW7mEcGnI"
+                        self::$config["database"]["password"]
                     );
                 }
                 catch (Exception $e)

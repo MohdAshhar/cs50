@@ -169,5 +169,31 @@
         
         return $formatted;
     }
+    
+    function update_portfolio(){
+          
+          
+    $rows = CS50::query("select shares, symbol from portfolio where user_id =?", $_SESSION["id"]);
+    
+    $stocks= [];
+    
+    foreach($rows as $row)
+    {
+        $stock = lookup($row["symbol"]);
+        
+        if($stock!== false)
+        {
+            $stocks[]= [
+                "name" => $stock["name"],
+                "price" => $stock["price"],
+                "symbol" => $row["symbol"],
+                "share" => $row["shares"]
+                ];
+        }
+    }
+    
+   
+       return $stocks; 
+    }
 
 ?>

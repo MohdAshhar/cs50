@@ -3,6 +3,8 @@
 // Configuration
 require("../includes/config.php");
 
+
+
 // check if to render form or info
 if($_SERVER["REQUEST_METHOD"]=="GET")
 {
@@ -13,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET")
 else if($_SERVER["REQUEST_METHOD"]=="POST")
 {
     $stock = lookup($_POST["quote"]);
+    
     
     if($stock !== false)
     {

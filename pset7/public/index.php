@@ -1,9 +1,14 @@
 <?php
-
     // configuration
     require("../includes/config.php"); 
+    // query database for user's stocks
+    
+    
+    $stocks= update_portfolio();
+    
 
-    // render portfolio
-    render("portfolio.php", ["title" => "Portfolio"]);
-
+    
+    
+  render("portfolio.php", ["title"=>"portfolio", "stocks" => $stocks]);
+    
 ?>
