@@ -192,8 +192,16 @@
         }
     }
     
-   
-       return $stocks; 
+    
+       return $stocks;
     }
+    
+    function getcash()
+    {
+         $cash= cs50::query("select cash from users where id=?",$_SESSION["id"]);
+         return $cash[0]["cash"];
+    }
+    
+   
 
 ?>
