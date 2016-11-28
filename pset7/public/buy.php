@@ -20,8 +20,9 @@
         
         $buy_stock = CS50::query("INSERT INTO portfolio (user_id, symbol, shares) VALUES($id, '$symbol', $share) ON DUPLICATE KEY UPDATE shares = shares + $share");
 	    $update_cash = CS50::query("UPDATE users SET cash = cash - $cost WHERE id = $id");
+	    $history = CS50::query("INSERT INTO history (user_id, symbol, status, shares, price) VALUES($id, '$symbol', 'BUY', $share, $cost)");
 		
-		if($update_cash>0 && $buy_stock>0)
+		if($update_cash>0 && $buy_stock>0&& $history>0)
 		{
 		    $cash = getcash();
 		    render("buy_form.php", ["title"=>"BUY", "cash"=>$cash, "stocks"=>$stocks, "msg" => "Successfully bought the shares of {$symbol}"]);

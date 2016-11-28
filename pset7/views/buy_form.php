@@ -1,7 +1,7 @@
 
 <script type = "text/javascript">
 
-
+    // javascript function to check for the buy stock inputs and on valid inputs submit the form to buy stocks
     function checkSymbol()
     {
         var xhr;
@@ -40,6 +40,7 @@
     var quote ;
    
     var xHttp;
+    // function to get quote using ajax
     function getQuote(){
        quote = document.getElementById("quote").value;
        
@@ -99,6 +100,7 @@
             </div>
             
         </div>
+        <!-- buy stock form inputs symbol and no. of shares , validate using javascript and ajax and submit to buy.php controller -->
         <div class = "buy_stock" style= "width:50%; margin-bottom: 0px; float:left;">
             <h3>Buy Stocks</h3>
             <form id = "buyPost" action="buy.php" method="post">
@@ -114,6 +116,8 @@
             </div>
             </fieldset>
             </form>
+            
+            <!-- if buying stock is successful, this div other wise the display div below it. these value transferred from buy.php controller-->
             <?php if(isset($msg)): ?>
             <div class = "alert-success alert" role = "alert"> <?= htmlspecialchars($msg) ?></div>
             <?php endif ?>

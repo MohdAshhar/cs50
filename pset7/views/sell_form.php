@@ -37,7 +37,8 @@
                     <td>
                         <form action= "sell.php" method = "post" >
                             <input type = "hidden" name = "symbol" value = "<?= $stock['symbol']; ?>">
-                            <input type = "hidden" name = "cash" value = <?= $stock['price']*$stock['share']; ?>>
+                             <input type = "hidden" name = "shares" value = "<?= $stock['share']; ?>">
+                            <input type = "hidden" name = "cost" value = <?= $stock['price']*$stock['share']; ?>>
                         <button id = "<?= $stock["symbol"] ?>" onclick="sellConfirm('<?= $stock["symbol"] ?>'); return false;">SELL</button>
                         </form>
                         
