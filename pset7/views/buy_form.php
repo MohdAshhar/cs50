@@ -69,7 +69,7 @@
 
 
 <!-- start of buy page display -->
-<div class= "container" >
+<div class= "container" style = "position:relative; left:-15px;">
    <!-- div to display quotes using ajax -->
     <div class= "quote" style="width:30%; float:left;">
          <h3> Get stock details</h3>

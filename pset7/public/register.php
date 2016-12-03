@@ -29,6 +29,7 @@ else if ($_SERVER["REQUEST_METHOD"] == "POST")
     // Register User
     else
     {
+        
         $insert = CS50::query(
             "INSERT IGNORE INTO users (username, hash, cash) VALUES(?, ?, 10000.0000)", 
             $_POST["username"], 
